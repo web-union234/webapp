@@ -1,0 +1,577 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.4/dist/aos.css" rel="stylesheet">
+        <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.4/dist/aos.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".but1").click(function(){
+                    $(".about").show();
+                });
+                $(".a").hide();
+                $(".about").mouseenter(function(){
+                    $(".h3").fadeOut();
+                    $(".a").show();
+                    $(".a").animate({width:'50%'});
+                });
+                $(".about").mouseleave(function(){
+                    $(".a").animate({width:'0'});
+                    $(".a").fadeOut();
+                    $(".h3").fadeIn(1000);
+                });
+                $(".b").hide();
+                $(".social").mouseenter(function(){
+                    $(".h4").fadeOut();
+                    $(".b").animate({left:'-2000px',
+                    top:'-20px'});
+                    $(".b").fadeIn();
+                    $(".b").animate({left:'-800px'});
+                });
+                $(".social").mouseleave(function(){
+                    $(".b").slideDown();
+                    $(".b").fadeOut();
+                    $(".h4").fadeIn(1000);
+                });
+                $(".c").hide();
+                $(".gallery").mouseenter(function(){
+                    $(".h6").fadeOut();
+                    $(".c").show();
+                    $(".c").animate({width:'50%'});
+                });
+                $(".gallery").mouseleave(function(){
+                    $(".c").animate({width:'0%'});
+                    $(".c").fadeOut();
+                    $(".h6").fadeIn(1000);
+                });
+                $(".home").hide();  
+                $(".m").hide();
+                $(".but").click(function(){
+                    $(".home").slideToggle();
+                    $(".m").slideToggle();
+                    $(".chat-popup").slideToggle();
+                });
+                $(".insta").hide();
+                $('.b').click(function(){
+                   $(".insta").slideDown(); 
+                $(".up").click(function(){
+                    $(".insta").slideUp();
+                });
+                });
+                $(".ab").hide();
+                $(".l").hide();
+                $(".a").click(function(){
+                    $(".ab").show();
+                    $(".ab").animate({width:'1590'});
+                    $(".l").show();
+                    $(".up1").show(); 
+                });
+                   $(".up1").click(function(){
+                    $(".ab").animate({width:"0"});
+                    $(".up1").hide()
+                    $(".l").hide();
+                   });
+                   $(".open-button").click(function(){
+                        $(".chat-popup").slideToggle();
+                   });
+                   $(".cancel").click(function(){
+                       $(".chat-popup").slideToggle();
+                   });
+                   $(".gall").hide();
+                   $(".gallery").click(function(){
+                       $(".gall").slideDown();
+                   })
+                   $(".button").click(function(){
+                       $(".gall").slideToggle();
+                   })
+                });
+
+        </script>
+    </head>
+    <style>
+        
+        .body{
+            background-image: url("fb_bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover 200;
+            height:500px;
+            width:400px;
+            }
+        .tab{
+            position:fixed;
+            padding:40px 900px;
+            left:-10px;
+            top:0px;
+            background-color:#3b5998;
+            font-family:"Forte";
+            font-size: 20px;
+        }
+        .but{
+            position:fixed;
+            left:60%;
+            top:4%;
+            height: 50px;
+            width:150px;
+            color:white;
+            background-color: #3b5998;
+            border:#3b5998;
+            transition:0.3s;
+            font-size:20px;
+        }
+        .but1{
+            position:fixed;
+            left:70%;
+            top:4%;
+            height: 50px;
+            width:150px;
+            color:white;
+            font-size:20px;
+            margin: none;
+            background-color:#3b5998;
+            border:#3b5998;
+            transition:0.3s
+        }
+        .but:hover{
+            border:#3b5998;
+            border-bottom: 3px solid white;
+        }
+        .but1:hover{
+            border:#3b5998;
+            border-bottom: 3px solid white;
+        }
+    
+        .but2{
+            position:fixed;
+            left:80%;
+            top:4%;
+            height: 50px;
+            width:150px;
+            color:white;
+            font-size:20px;
+            margin: none;
+            background-color:#3b5998;
+            border:#3b5998;
+            transition:0.3s
+        }
+        .but2:hover{
+            border:#3b5998;
+            border-bottom: 3px solid white;}
+        .but3{
+            position:fixed;
+            left:90%;
+            top:4%;
+            height: 50px;
+            width:150px;
+            color:white;
+            font-size:20px;
+            margin: none;
+            background-color:#3b5998;
+            border:#3b5998;
+            transition:0.3s
+        }
+        .but3:hover{
+            border:#3b5998;
+            border-bottom: 3px solid white;}
+        #slider {
+	overflow: hidden;
+	position:absolute;
+	top:65px;
+	left:-40px;
+    height:700px;
+    width:1600px;   
+}
+
+@keyframes slider {
+	0% { left: 0%; }
+	30% { left: 0%; }
+	33% { left: -100%; }
+	63% { left: -100%; }
+	66% { left: -200%; }
+	80% { left: -200%; }
+	100% { left: 0%; }
+}
+#slider figure {
+	width:300%;
+	position: relative;
+	animation: 9s slider infinite;
+    top:0px
+}
+
+#slider figure img {
+	width: 33.33%;
+	height : 100%;
+	float: left;
+}
+.about{
+    padding:20px 390px;
+    background-image:url("fb_about.jpg");
+    background-size: cover;
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+    top:140%;
+    left:-5%;
+    height: 250px;
+    transition: all 0.5s;
+    width: 785px;
+    margin: 5px;
+    font-family:"Ink Free";
+    font-size:50px;
+}
+.social{
+    padding:20px 410px;
+    background-image:url("fb_so.jpg");
+    background-size: cover;
+    height:250px;
+    position:relative;
+    top:138%;
+    color:orangered;
+    width:770px;
+    font-family: "Ink Free";
+    text-align: center;
+    font-size: 60px;
+    left:-40px;
+}
+.a{
+    padding:20px 50px;
+    background-color: white;
+    background-size: cover;
+    background-image: url("ab.jpg");
+    content:"About this page and our members";
+    position:absolute;
+    top:0%;
+    right:40px;
+    font-size: 30px;
+    font-family:'Lucida Handwriting';
+    height:300px;
+    text-align:left;
+    border:none;
+}
+.b{
+    padding:20px 50px;
+    background-color: white;
+    background-image: url("so.jpg");
+    background-size: cover;
+    position:relative;
+    font-size: 40px;
+    border: none;
+    font-family:'Lucida Handwriting';
+   width:1200px;
+   height:280px;
+   text-align:right; 
+}
+.gal1{
+    height:30%;
+    width:35%;
+    border:2px;
+    border-radius:14px;
+    transition:0.3s;
+}
+.gal1:hover{
+    transform: scale(1.3);
+    visibility: visible;
+    opacity:1;
+}
+.button{
+    position:absolute;
+    top:0%;
+    left:5%;
+    color: white;
+    background-color: #3b5998;
+}
+.tab1{
+    position: absolute;
+    top:-10%;
+    padding:20px 640px;
+    background-color: #3b5998;
+    font-size:40px;
+    font-family:monospace;
+    color:white;
+    text-align:center;
+}
+.img0{
+    position:relative;
+    top:10%;
+    left:10%;
+    border:2px;
+    border-radius:14px;
+}
+.img1{
+    position:relative;
+    top:50%;
+    left:-25%;
+    border:2px;
+    border-radius:14px;
+}
+.img2{
+    position:relative;
+    left:55%;
+    top:-20%;
+    border:2px;
+    border-radius:14px;
+}
+.img3{
+    position: absolute;
+    left:55%;
+    top:50%;
+    border:2px;
+    border-radius:14px;
+}
+
+
+.c{
+    background-color: white;
+    background-image: url("blur.jpg");
+    background-size: cover;
+    position: absolute;
+    top:0%;
+    right:40px;
+    font-size: 40px;
+    border: none;
+    font-family:'Lucida Handwriting';
+    height:100%;
+    text-align:left;
+}
+.gallery{
+    padding:20px 410px;
+    background-image:url("gal.jpg");
+    background-size: cover;
+    height:270px;
+    position:relative;
+    top:139%;
+    width:770px;
+    color:white;
+    font-size:60px;
+    text-align: center;
+    font-family:'Ink Free';
+    left:-40px;
+}
+.h5{
+    font-family: 'Forte';
+    font-size:50px;
+    position:absolute;
+    top:-70%;
+    color:white;
+    left:8%;
+}
+.home{
+    height:630px;
+    width:1620px;
+    position: absolute;;
+    top:79px;
+    left:-40px;
+    background-color: white;
+    background-image: url("home.jpg");
+    background-size: cover;
+    background-position:0px ;
+    background-repeat: no-repeat;
+    filter:blur(5px);
+}
+.m{
+    padding:200px 10px;
+    border-left:12px solid #3b5998;
+    border-radius: 10px;
+    width:450px;
+    left:4%;
+    top:20%;
+    position:absolute;
+    background-color:white
+}
+.insta{
+    height:290px;
+    width: 1590px;
+    position: relative;
+    top:18%;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    background-color: white;
+    left:-40px;
+}
+.ab{
+    height:290px;
+    position: relative;
+    top:-40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    background-color: white;
+    left:-40px;
+}
+.l{
+    text-align: center;
+    font-family:'Segoe Print';
+    font-size:40px;
+}
+.up1{
+    position:relative;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 8px;
+    margin: none;
+    top:50%;
+    left:98%;
+}
+.right{
+    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.up{
+    padding:10px 20px;
+    width:1570px;
+    background-color: tomato;
+    position:relative;
+    top:90%;
+    left:0%;
+}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.btn {
+  background-color:#3b5998;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.gall{
+    height:170%;
+    width:399%;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    left:-10%;
+    background-color:white;
+    position:relative;
+    top:-30%;
+}
+        
+    </style>
+    <body class="body">
+        <div class="tab">
+            <h4 class="h5">@  portfolio</h4>
+            <div>
+           <a href="#"><button class="but">HOME</button></a> 
+           <a href="#ab"><button class="but1">ABOUT</button></a>
+            <a href='#so'><button class="but2">SOCIAL</button></a>
+            <a href="#gal"><button class="but3">GALLERY</button></a>
+            </div>
+        </div>
+        <div id="slider">
+            <figure>
+            <img src="facebook.jpg">
+            <img src="facebook2.jpg">
+            <img src="facebook3.jpg">
+            <img src="facebook1.jpeg">
+            </figure>
+            </div>
+        <div id='ab' class="about">
+            <h2 class="h3">About</h3>
+            <button class="a">About our page and our members</button>
+        </div>
+        <div id="so" class="social">
+
+            <h2 class="h4">Social</h3>
+            <button class="b">Where You can connect > > ></button>
+        </div>
+        <div id="gal" class="gallery">
+            <h2 class="h6"> Gallery</h2>
+            <button class="c">Our Collections</button>
+        </div>
+        <div class="home"></div>
+            <div class="m">
+                <h1 style="font-family:Stylus BT; position:absolute;color:#3b5998; top:0%;">Whats on your mind:</h1>
+                <textarea rows="5" cols="60"style="height: 300px; width: 350px; position:absolute; top:19%;" placeholder="Type here"></textarea>
+                <button class="open-button">Ask Question</button>
+
+                <div class="chat-popup" id="myForm">
+                    <div style="background-color: #3b5998; padding:10px 5px ;">
+                        <h1 style="text-align: center; font-size: 25px; color: white;">FAQ</h1>
+                    </div>
+                        <label for="msg"><b>Message</b></label>
+                        <textarea placeholder="Type message.."  name="msg" required></textarea>
+
+                        <button type="submit" class="btn">Send</button>
+                        <button type="button" class="btn cancel">Close</button>
+                </div>
+            </div>
+        <div class="insta">
+            <button class='up'>^</button>
+        </div>
+        <div class="ab">
+            <i class="up1 right"></i>
+            <h1 class="l">About the Page</h1>
+        </div>
+         <div class="gall">
+            <h1 class="tab1">Our Collections</h1>
+            <button class="button">X</button>
+             <img class="gal1 img0" src="gal1.jpg" >
+             
+             <img class="gal1 img1" src="gal2.jpg" >
+             <img class="gal1 img2" src="gal3.jpg" >
+             <img class="gal1 img3" src="gal4.jpg" >
+         </div>   
+
+
+    </body>
+</html>
