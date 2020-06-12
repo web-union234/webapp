@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog clock</title>
+<style>
+    body{
+        background:linear-gradient(white,skyblue,blue);
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+.clock{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 50% ;
+    box-shadow:2px 4px 5px 5px gray;
+    background-image: url('clock.png');
+    background-size: cover;
+
+}
+.nob{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,0%);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    z-index: 10;
+}
+.hour{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 20px;
+    height: 300px;
+    
+}
+.minute{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 5px;
+    height: 300px;
+    transform-style: preserve-3d;
+}
+.second{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 5px;
+    height: 300px;
+    transform-style: preserve-3d;   
+}
+.hr{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-95%);
+    width: 10px;
+    height:70px;
+    background-color: black;
+    border-radius: 10px;
+}
+.min{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-80%);
+    width: 5px;
+    height:150px;
+    background-color: blue;
+    border-radius: 10px;
+}
+.sec{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-80%);
+    width: 2px;
+    height:200px;
+    background-color: red;
+    border-radius: 10px;
+}
+.digital{
+    width: 400px;
+    font-weight: 800;
+    font-size:80px;
+    color:rgb(255, 111, 27);
+    transform: translateX(200%);
+}
+.outer{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    }
+</style>
+</head>
+
+<body>
+   <div class="outer">
+    <div class="clock" id="clock">
+        <div class="nob">
+        </div>
+            <div class="hour" id="hour">
+                <div class="hr">
+                </div>
+            </div>
+            <div class="minute" id="minute">
+                <div class="min">
+                </div>
+            </div>
+            <div class="second" id="second">
+                <div class="sec">
+                </div>
+            </div>
+        </div>
+        <div class="digital">
+           <span id="h"></span>:<span id="m"></span>:<span id="s"></span>
+        </div>
+    </div>
+</body>
+<script>
+    var deg=6;
+    setTimeout(()=>{
+    setInterval(function (){
+        var hr=new Date().getHours();
+        var hour;
+        if(hr>=12)
+            hr-=12;      
+        hour=(hr*30)+(new Date().getMinutes()*0.5);
+        document.getElementById('second').style.transform="rotateZ"+"("+new Date().getSeconds()*deg+"deg)";
+        document.getElementById('hour').style.transform="rotateZ"+"("+hour+"deg)";
+        document.getElementById('minute').style.transform="rotateZ"+"("+new Date().getMinutes()*deg+"deg)";
+        document.getElementById('second').style.top="14%";
+        document.getElementById('second').style.left="50%";
+        document.getElementById('hour').style.top="14%";
+        document.getElementById('hour').style.left="49%";
+        document.getElementById('minute').style.top="14%";
+        document.getElementById('minute').style.left="49%";
+        document.getElementById('h').innerHTML=new Date().getHours();
+        document.getElementById('m').innerHTML=new Date().getMinutes();
+        document.getElementById('s').innerHTML=new Date().getSeconds();
+    },1000);
+    },500)
+</script>
+</html>
