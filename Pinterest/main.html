@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> PINTEREST</title>
+     <style>
+           body{
+               
+               display: flex;
+               width: 900px;
+               height:300px;
+               align-items: center;
+               justify-content: center;
+               overflow: hidden;
+           }
+           #container{
+            position: absolute;
+            top: -175px;
+            left: 200px;
+            width: 900px;
+            height: 790px;
+        }
+      .st1{
+          fill:transparent;
+          stroke:#F40606;
+          stroke-width:9;
+          stroke-miterlimit:10;
+      }
+      .st1:hover{
+            animation: border 3s linear;
+            animation-fill-mode: forwards;
+        }
+      @keyframes border{
+                    0%{
+                        stroke-dasharray: 20px 10000px;
+                stroke-dashoffset: -1350px;
+                    }
+                    25%{
+                        stroke-dasharray: 20px 10000px;
+                stroke-dashoffset: 0;
+                    }
+                    100%{
+                        stroke-dasharray:  10000px 0;
+                stroke-dashoffset: 0;
+                    }
+                } 
+    </style>
+</head>
+<body>
+    <svg id="container" > 
+        <!--The below path is been made in illustrator and then converted into SVG file format -->
+        <path class="st1" d="M497.93,488.15c0,0-58.28,208.89-47.43,249.22c0,0,6.1,80.65,58.28,16.13c23.04-40.33,35.91-64.52,51.5-137.11
+		c47.43,31.46,176.86,39.52,229.04-103.24c52.86-128.24-33.2-224.22-73.18-247.61c-39.98-23.39-195.84-72.59-303.58,51.62
+		c-96.22,145.18-6.1,256.48,44.05,244.38c8.81,1.61,35.24-39.52,14.91-69.36s-15.59-69.36-15.59-69.36s17.62-129.85,167.38-105.66
+		c50.15,16.13,106.39,44.36,72.51,161.31c-33.88,116.95-100.29,72.59-100.29,72.59s-17.62-11.29-7.45-50.81
+		c19.65-33.87,54.89-141.14-23.72-148.4c-78.61-7.26-76.57,91.14-76.57,100.01C487.76,460.73,497.93,488.15,497.93,488.15z"/>
+        </svg>
+</body>
+</html>
