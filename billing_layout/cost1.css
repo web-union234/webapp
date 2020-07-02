@@ -1,0 +1,43 @@
+body {
+    font-family: "Montserrat";
+    text-align: center;
+  }
+  h2, h3 {
+    font-family: "Montserrat-Bold";
+  }
+  .section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+  .pink-section {
+    background-color: #ff4c68;
+  }
+
+  .top{
+    background-color: #fff;
+    border-style: double;
+    border-width: 1rem;
+    border-color: rgba(53, 48, 48, 0.76);
+
+  }
+
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+.btn-outline-dark:hover{
+    background-color: #ff4c68;
+  }
+
+  .btn-dark:hover{
+    background-color: #ff4c68;  
+  }
