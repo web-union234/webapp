@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle button</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .outer{
+            width: 300px;
+            height: 100px;
+            background-color: gray;
+            box-shadow: 3px 3px 100px rgb(255, 28, 28);
+            
+            align-items: center;
+            border-radius: 100px;
+        }
+        .container{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        .btn{ 
+            width: 150px;
+            height: 100px;
+            border-radius: 50px;
+            text-shadow: 2px 2px 20px red;
+            background-color: rgb(26, 22, 22);
+            outline: none;
+            border: none;
+            transition: all 2s;
+            font-size:25px;
+            color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="outer">
+        <button class="btn" onclick="change()">
+            OFF
+        </button>
+        </div>
+    </div>
+</body>
+<script>
+    var chance='on'
+   function change(){
+        if(chance=='on'){
+            console.log('ok');
+            document.querySelector('.btn').style.transform="translateX(100%)";
+            document.querySelector('.btn').innerHTML="ON"
+            // document.body.style.backgroundColor="black";
+            document.querySelector('.outer').style.boxShadow=' 3px 3px 50px 0px  rgb(12, 189, 92)';
+            document.querySelector('.btn').style.color='green';
+            chance='off';
+        }
+        else{
+            document.querySelector('.btn').style.transform="translateX(0%)";
+            document.querySelector('.btn').innerHTML="OFF";
+            document.querySelector('.outer').style.boxShadow=' 3px 3px 50px 0px  red';
+            // document.body.style.backgroundColor="white";
+            document.querySelector('.btn').style.color='red';
+            chance='on';
+        }
+   }
+</script>
+
+</html>
