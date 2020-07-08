@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading</title>
+    <style>
+         body{
+            background-color: black;
+        }
+        .container{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            width: 50%;
+            font-size: 40px;
+        }
+        p{
+            text-align: center;
+            color: rgb(6, 96, 175);
+        }
+        .bar{
+            width:100%;
+            height: 20px;
+        }
+        .load{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Loading....</p>
+        <p id="per"></p>
+        <div class="bar">
+            <div class="load" id="load">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var r=255,g=0;
+    var width=0;
+    var interval=setInterval(() => {
+        if(r==55){
+        clearInterval(interval);
+    }
+        if(g<200){
+        document.getElementById('load').style.width=width+'%';
+        document.getElementById('load').style.backgroundColor='rgb(255,'+g+',0)';
+        document.querySelector('.bar').style.boxShadow='3px 3px 50px 0px  rgb(220,'+g+',0)';
+        document.getElementById('per').style.color='rgb(220,'+g+',0)';
+        g+=20;
+        }
+        else{
+            document.getElementById('load').style.width=width+'%';
+            document.getElementById('load').style.backgroundColor='rgb('+r+',255,0)';
+            document.querySelector('.bar').style.boxShadow='3px 3px 50px 0px  rgb('+r+',218,0)';
+            document.getElementById('per').style.color='rgb('+r+',218,0)';
+            r-=20; 
+        }
+        document.getElementById('per').innerHTML=width+'%';
+        width=width+5;   
+    }, 500);
+</script>
+</html>
