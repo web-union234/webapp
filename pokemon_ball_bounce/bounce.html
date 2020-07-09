@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bouncing ball</title>
+    <style>
+        .container{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        .ball{
+            /* position: relative; */
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background:linear-gradient(rgb(196, 14, 14) 50%,rgb(6, 6, 167) 50%);
+            box-shadow: 0px 0px 10px 0px blue;
+            animation: move 1s  infinite alternate;
+        }
+        .btn{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width:10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color:white;
+            z-index: 2;
+        }
+        .shadow{
+            width: 60px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: gray;
+            animation: shad 1s  infinite alternate;
+        }
+        @keyframes shad{
+            0%{
+                transform: scale(1);
+            }
+            100%{
+
+                transform:  scale(0.3);
+            }
+        }
+
+        @keyframes move{
+            0%{
+                
+                transform: translateY(0%) rotate(0deg);
+                
+            }
+            100%{
+                
+                transform: translateY(-300%) rotate(180deg);
+                /* transform: rotate(180deg); */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball">
+            <div class="btn">
+            </div>
+        </div>
+        <div class="shadow">
+
+        </div>
+    </div>
+</body>
+</html>
