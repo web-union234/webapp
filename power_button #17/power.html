@@ -25,30 +25,26 @@
             height: 100%;
             border-radius: 50%;
             background-color: black;
-            box-shadow: inset 0px 0px 10px 0px gray , 0px 0px 30px  red ;
-			transition:2s;
-        }
+            box-shadow: inset 0px 0px 10px 0px gray , 0px 0px 30px  blue ;
+            transition: 2s;}
         i{
             color: rgb(253, 8, 8);
             position: absolute;
+            color:skyblue;
             top:50%;
             left:50%;
             transform: translate(-50%,-50%);
-			transition:2s;
-        }
-        .outer:hover{
-            cursor: pointer;
-        }
+            transition: 2s;}
+        .outer:hover{cursor: pointer;}
         .content{
             position: absolute;
             top:30%;
             left: 50%;
-            transform: translate(-50%,-50%);
-        }
+            transform: translate(-50%,-50%);}
         .content p{
             font-size: 40px;
-            color:'black';
-        }
+            transition: 2s;
+            color:'black';}
     </style>
 </head>
 <body>
@@ -57,7 +53,7 @@
     </div>
     <div class="container">
         <div class="outer" id='btn'>
-            <i class="fas fa-power-off"></i>
+            <i class="fas fa-moon"></i>
         </div>
     </div>
 </body>
@@ -65,19 +61,20 @@
     var chance='on';
     document.getElementById('btn').addEventListener('click',()=>{
         if(chance=='on'){
-            document.querySelector('i').style.color="green";
             document.querySelector('p').innerHTML="Dark Mode ON";
             document.querySelector('p').style.color='gray';
-            document.querySelector('.outer').style.boxShadow=' inset 0px 0px 10px 0px gray , 0px 0px 30px  green';
+            document.querySelector('.outer').style.boxShadow=' inset 0px 0px 10px 0px gray , 0px 0px 30px  yellow';
+            document.querySelector('i').setAttribute('class','fas fa-sun');
+            document.querySelector('i').style.color='yellow';
             document.body.style.background='black';
-            document.querySelector('#btn').style.color='green';
             chance='off';
         }
         else{
-            document.querySelector('i').style.color="rgb(253, 8, 8)";
+            document.querySelector('i').setAttribute('class','fas fa-moon');
             document.querySelector('p').innerHTML="Dark Mode OFF";
             document.querySelector('p').style.color='black';
-            document.querySelector('.outer').style.boxShadow='inset 0px 0px 10px 0px gray , 0px 0px 30px  red';
+            document.querySelector('.outer').style.boxShadow='inset 0px 0px 10px 0px gray , 0px 0px 30px  blue';
+            document.querySelector('i').style.color='skyblue';
             document.body.style.background='white';
             document.querySelector('#btn').style.color='red';
             chance='on';
