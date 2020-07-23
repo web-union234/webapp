@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="calc.css">
+    <title>Calculator</title>
+</head>
+<body>
+     <center>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="first">
+            <input type="text" class="result" id="result" value="" placeholder="Result">
+            <input type="button" value="C" onclick="clearscreen()" class="clear">
+        </div>
+        <div class="second">
+            <input type="button" value="1" onclick="screen(1)" id="one">
+            <input type="button" value="2" onclick="screen(2)" id="two">
+            <input type="button" value="3" onclick="screen(3)" id="three">
+            <input type="button" value="+" onclick="screen('+')" >
+        </div>
+        <div class="third">
+            <input type="button" value="4" onclick="screen(4)" id="four">
+            <input type="button" value="5" onclick="screen(5)" id="five">
+            <input type="button" value="6" onclick="screen(6)" id="six">
+            <input type="button" value="-" onclick="screen('-')"  >
+        </div>
+        <div class="four">
+            <input type="button" value="7" onclick="screen(1)" id="seven">
+            <input type="button" value="8" onclick="screen(2)" id="eight">
+            <input type="button" value="9" onclick="screen(3)" id="nine">
+            <input type="button" value="*" onclick="screen('*')" >
+        </div>
+        <div class="five">
+            <input type="button" value="/" onclick="screen('/')" >
+            <input type="button" value="0" onclick="screen(0)" id="zero">
+            <input type="button" value="." onclick="screen('.')" >
+            <input type="button" value="="onclick="result.value=eval(result.value)" >
+        </div>
+        <div class="bottom">
+            <button type="button" id="darkmode">
+                Dark Mode 🌙
+            </button>
+        </div>
+    </div>
+</center>
+<script src="calc.js"></script>
+</body>
+</html>
