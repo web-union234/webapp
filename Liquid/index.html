@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liquid Button</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(31, 36, 41);
+        }
+        .button{
+             display: flex;
+             padding:50px;
+             flex-wrap: wrap;
+             height: 600px;
+             align-items: center;
+             justify-content: center;
+        }
+        .btn{
+            font-size: 20px;
+            font-family: 'Sora', sans-serif;
+            height: 10%;
+            width: 15%;
+            color: beige;
+            text-shadow: 0 3px 5px rgba(201, 43, 43, 0.952);
+            border: 2px solid #e9780e;
+            border-radius: 50px;
+            outline: none;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            background:transparent;
+            background-image: url("9.png");
+            background-repeat: repeat-x;
+            transition:  3.5s ease;
+            background-position: 0 -100%;
+        }
+        .btn:hover{
+            background-position: 500% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="button">
+        <button type="button" class="btn">Liquid Button</button>
+    </div>
+</body>
+</html>
