@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            background: white;
+            margin: 0;
+
+        }
+        .tom{
+            position: absolute;
+            top:10%;
+            left:40%;
+            font-size:50px;
+            font-weight: bolder;
+            color: red;
+            text-align: center;
+        }
+        .img{
+            background-image: url('tom.jpg');
+            filter: blur(6px);
+            background-size: cover;
+            width:100vw ;
+            height: 100vh;
+        }
+        .container{
+            position: absolute;
+            top:0%;
+            left:0%;
+            z-index: 400;
+            width: 100vw;
+            height:100vh ;
+        }
+        .cat{
+            position: absolute;
+            background-image: url('cat.png');
+            background-size: cover;
+            top:50%;
+            left:50%;
+            width: 200px;
+            height: 200px;
+            transition: 3s;
+        }
+        .mouse{
+            position: absolute;
+            background-image: url('mouse.png');
+            background-size: cover;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="img"></div>
+    <div class="tom">
+        Tom & Jerry
+    </div>
+    <div class="container" id="i">
+        <div class="cat" id='b'>
+        </div>
+    </div>
+</body>
+<script>
+    var con=document.getElementById('i');
+    var creation=true;
+    document.getElementById('i').addEventListener('mousemove',(event)=>{
+        var mouse=document.createElement('div');
+        mouse.style.top=(event.clientY-20)+'px';
+        mouse.style.left=(event.clientX-20)+'px'; 
+        mouse.setAttribute('class','mouse'); 
+        var ball=document.getElementById('b');
+        ball.style.top=(event.clientY-50)+'px';
+        ball.style.left=(event.clientX-50)+'px';
+        if(creation){   
+        con.appendChild(mouse);
+        creation=false;
+        }
+        else{
+            console.log(document.getElementById('i').childNodes[3])
+            con.replaceChild(mouse,document.getElementById('i').childNodes[3])
+        }
+    })
+</script>
+</html>
