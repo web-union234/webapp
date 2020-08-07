@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Instagram</title>
+    <style> 
+    .container{
+            width: 400px;
+            height: 400px; 
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border-color: black;
+            box-shadow: 2px 2px 20px gray ;
+            font-size: 20px;
+        }
+        .image{
+            /* background-image: url('man.jpg');
+            background-size: cover; */
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 0px;
+            height:300px;
+            border:1px solid gray;
+            border-left: none;
+            border-right: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: firebrick;
+        }
+        .content{
+            width: 80%;
+            border: 5px dashed gray;
+            font-size: 50px;
+            font-family: Lucida Handwriting;
+        }
+        .detail{
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            display:flex;
+        }
+        .detail .dp{
+            position: relative;
+            top: 20%;
+            left: 2%;
+            width: 40px ;
+            height: 40px;
+            border-radius: 50%;
+            background: url('logo_img.jpeg');
+            background-size: cover;
+        }
+        .detail .name{
+            position: absolute;
+            top: 2%;
+            left: 15%;
+            font-size: 25px;
+        }
+        .tool{
+            margin-left: 8px;
+            margin-top: 7px;
+            display: flex;
+            flex-direction: row;
+            width: 25%;
+            justify-content: space-between;
+            font-size: 23px;
+        }
+        .tool i:hover{
+            cursor: pointer;
+        }
+        .detail i{
+            padding:15px 15px;
+            position: absolute;
+            top: 0%;
+            right: 0%;
+        }
+        #book{
+            position: absolute;
+            top: 89%;
+            right: 3%; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="detail">
+            <div class="dp">
+            </div>
+            <div class="name">web_union</div>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="image"><div class="content">Your Photo Here</div></div>
+        <div class="tool">
+            <i class="far fa-heart" id='like' onclick="likes()"></i>
+            <i class="far fa-comment"></i>
+            <i class="far fa-paper-plane"></i>
+            <i class="far fa-bookmark" id="book" onclick="bookmark()"></i>
+        </div></div>
+</body>
+<script>
+    var like=false;
+    var book=false;
+    function likes(){
+        if(!like){
+            document.getElementById('like').setAttribute('class','fas fa-heart');
+            document.getElementById('like').style.color='red';
+            document.getElementById('like').animate([{transform:'scale(0)'},{transform:'scale(1)'}],{duration:100});
+            like=true;  
+        }
+        else{
+            document.getElementById('like').setAttribute('class','far fa-heart');
+            document.getElementById('like').style.color='black';
+            document.getElementById('like').animate([{transform:'scale(0)'},{transform:'scale(1)'}],{duration:100});
+            like=false;
+        }
+    }
+    function bookmark(){
+        if(!book){
+            document.getElementById('book').setAttribute('class','fas fa-bookmark');
+            document.getElementById('book').animate([{transform:'scale(0)'},{transform:'scale(1)'}],{duration:100});
+            book=true;  
+        }
+        else{
+            document.getElementById('book').setAttribute('class','far fa-bookmark');
+            document.getElementById('book').animate([{transform:'scale(0)'},{transform:'scale(1)'}],{duration:100});
+            book=false;
+        }
+    }
+</script>
+</html>
